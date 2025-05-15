@@ -1,0 +1,46 @@
+
+class calculator:
+    def suma(self, a, b):
+        return a + b
+
+    def resta(self, a, b):
+        return a - b
+
+    def multi(self, a, b):
+        return a * b
+
+    def division(self, a, b):
+        try:
+            return a / b
+        except ZeroDivisionError:
+            return "ERROR: Division por cero no permitida"
+        
+    def modulo(self, a, b):
+        try:
+            return a % b
+        except ZeroDivisionError:
+            return "ERROR: Division por cero no permitida"
+        
+class Main:
+    def __init__(self):
+        self.calculator = calculator()
+        self.run()
+    
+    def run(self):
+        try:
+            a= int(input("!!! ingrese el primer numero: "))
+            b= int(input("!!! ingrese el segundo numero: "))
+        
+        except ValueError:
+            print("!!! ERROR: Debe ingresar un numero entero")
+            return self.run()
+        
+        print("-- SUMA--- : ", self.calculator.suma(a, b))
+        print("-- RESTA--- : ", self.calculator.resta(a, b))
+        print("-- MULTIPLICACION--- : ", self.calculator.multi(a, b))
+        print("-- DIVISION--- : ", self.calculator.division(a, b))
+        print("-- MODULO--- : ", self.calculator.modulo(a, b))
+
+if __name__ == "__main__":
+    Main()
+        
